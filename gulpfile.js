@@ -6,7 +6,6 @@ var gulp = require('gulp');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
-var deploy = require("gulp-gh-pages");
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -34,7 +33,7 @@ var settings = {
 };
 
 gulp.task('styles', function () {
-    return gulp.src(settings.devPaths.sass + '/main.scss')
+    return gulp.src([settings.devPaths.sass + '/main.scss', settings.devPaths.sass + '/fonts.scss'])
         .pipe($.rubySass({
             style: 'expanded',
             precision: 10
@@ -49,7 +48,8 @@ gulp.task('sg-styles', function () {
     return gulp.src('src/styleguide/assets/scss/docs.scss')
         .pipe($.rubySass({
             style: 'expanded',
-            precision: 10
+            precision: 10,
+            compass: true
         }))
         .pipe($.autoprefixer('last 2 version'))
         .pipe(gulp.dest('src/styleguide/assets/css'))
