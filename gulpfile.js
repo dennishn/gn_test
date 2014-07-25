@@ -48,8 +48,7 @@ gulp.task('sg-styles', function () {
     return gulp.src('src/styleguide/assets/scss/docs.scss')
         .pipe($.rubySass({
             style: 'expanded',
-            precision: 10,
-            compass: true
+            precision: 10
         }))
         .pipe($.autoprefixer('last 2 version'))
         .pipe(gulp.dest('src/styleguide/assets/css'))

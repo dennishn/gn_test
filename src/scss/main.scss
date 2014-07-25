@@ -8,7 +8,6 @@
 
 //Compass Imports
 //
-@import "compass/css3/box";
 
 //Nodes Globals
 //Mixins and Functions must NEVER be dependant on variables
@@ -75,6 +74,7 @@
 // Base
 /* ---> Do not delete this comment (base) <--- */
 // Elements
+@import "elements/button";
 /* ---> Do not delete this comment (elements) <--- */
 // Modules
 /* ---> Do not delete this comment (modules) <--- */
